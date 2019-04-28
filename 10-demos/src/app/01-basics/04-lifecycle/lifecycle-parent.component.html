@@ -1,0 +1,15 @@
+<div>
+    <h2>Lifecycle Demo</h2>
+    <p>Watch the developer console!</p>
+    <div>
+
+      <button (click)="toggleChild()">
+        {{hasChild ? 'Destroy' : 'Create'}} Component
+      </button>
+      <button (click)="update()" [hidden]="!hasChild">Update</button>
+
+    </div>
+
+    <aw-lifecycle *ngIf="hasChild" [date]="theDate"></aw-lifecycle>
+
+</div>

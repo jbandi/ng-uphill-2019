@@ -1,0 +1,15 @@
+@import "shared";
+
+.parent-header {
+  @include component-title;
+  padding-bottom: 20px;
+}
+
+.parent-section-form {
+  background: lightcyan; padding: 20px
+}
+
+.parent-section-list {
+  background: lightpink; padding: 20px
+}
+

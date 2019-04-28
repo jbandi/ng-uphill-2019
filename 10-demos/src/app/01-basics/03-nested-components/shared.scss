@@ -1,0 +1,7 @@
+$child-title-font-weight: bold;
+
+@mixin component-title {
+  font-weight: $child-title-font-weight;
+  font-size: large;
+  padding-right: 40px;
+}

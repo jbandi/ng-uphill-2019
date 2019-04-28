@@ -1,0 +1,15 @@
+{
+  "name": "angularjs-demo",
+  "version": "0.0.1",
+  "author": "Jonas Bandi",
+  "description": "A demo app with backend access",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "morgan": "^1.9.1"
+  },
+  "license": "MIT"
+}

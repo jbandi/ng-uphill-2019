@@ -1,0 +1,21 @@
+<h4>Latest Angular Committers:</h4>
+
+<ul>
+    <li *ngFor="let commit of commits">
+        {{commit.date | date}}: {{commit.name}}
+    </li>
+</ul>
+
+<p>Error Message: {{errorMessage}}</p>
+
+
+
+<!--TODO:-->
+
+<!--<ul>-->
+    <!--<li *ngFor="#commit of commits | async">-->
+        <!--{{commit.date | date}}: {{commit.name}}-->
+    <!--</li>-->
+<!--</ul>-->
+
+

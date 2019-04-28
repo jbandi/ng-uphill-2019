@@ -1,0 +1,21 @@
+@import "shared";
+
+.child-form-header {
+  padding-bottom: 20px;
+  .title {
+    @include component-title
+  }
+  .info {
+    font-size: small;
+  }
+}
+.form-wrapper {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  grid-gap: 10px;
+}
+button {
+  min-width: 100px;
+  min-height: 30px;
+  font-weight: bold;
+}

@@ -1,0 +1,7 @@
+<h1>Routed Component</h1>
+<h1>Current Detail: {{detailNo}}</h1>
+
+<a [routerLink]="['../../other-snapshot', detailNo + 1]">Go to other component ...</a>
+<br>
+<button (click)="goToNextDetail()">Go to next detail ...</button>
+

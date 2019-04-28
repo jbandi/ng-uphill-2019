@@ -1,0 +1,26 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="push" class="example-sidenav">
+    <aw-sidebar></aw-sidebar>
+  </mat-sidenav>
+
+  <div class="example-sidenav-content">
+
+    <div class="header">
+
+      <h3>
+        Learn Angular by Example ...
+      </h3>
+
+      <button type="button" (click)="sidenav.open()">
+        Choose ...
+      </button>
+    </div>
+
+    <div class="example-content">
+      <router-outlet></router-outlet>
+    </div>
+
+
+  </div>
+
+</mat-sidenav-container>

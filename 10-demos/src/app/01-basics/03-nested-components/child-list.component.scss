@@ -1,0 +1,5 @@
+@import "shared";
+
+.child-list-header {
+  @include component-title
+}

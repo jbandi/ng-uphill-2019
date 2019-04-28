@@ -1,0 +1,31 @@
+<h3>Template Driven Forms</h3>
+
+<form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+
+    <fieldset ngModelGroup="login">
+        <input name="username"
+               type="text"
+               required
+               minlength="3"
+               [(ngModel)]="username"
+               #usernameRef="ngModel">
+        <div *ngIf="usernameRef.errors?.required">This field is required</div>
+
+        <br>
+        <input name="password" type="password" ngModel>
+    </fieldset>
+
+    <br>
+    <button type="submit">Submit!</button>
+</form>
+<hr>
+<h3>Debug:</h3>
+<br>
+Valid: {{formRef.valid}}
+<br>
+Username error: {{formRef.getControl({path: 'login.username'})?.errors | json}}
+<br>
+Password error: {{formRef.getControl({path: 'login.password'})?.errors | json}}
+<br>
+Value: {{formRef.value | json}}
+

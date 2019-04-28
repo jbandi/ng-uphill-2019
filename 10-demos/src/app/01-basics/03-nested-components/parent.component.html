@@ -1,0 +1,26 @@
+<div class="parent-header">
+  <span>
+    Parent
+  </span>
+  <button (click)="childForm.reset()">Reset Forms</button>
+</div>
+
+<div class="parent-section-form">
+  <aw-child-form #childForm (addPerson)="onAddPerson($event)"></aw-child-form>
+</div>
+
+<br>
+
+<div class="parent-section-list">
+  <aw-child-list [children]="persons"></aw-child-list>
+</div>
+
+
+<!--
+// DEMO:
+// remove #childForm local variable declaration
+// Introduce @ViewChild in component
+// Delegate click to component and call child-form from code
+
+// Add a second child-form
+-->

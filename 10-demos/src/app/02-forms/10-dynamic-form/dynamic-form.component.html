@@ -1,0 +1,38 @@
+<form [formGroup]="form">
+  <div *ngFor="let field of formTemplateFields">
+    <label>{{ field.label }}:</label>
+
+    <div [ngSwitch]="field.type">
+      <input *ngSwitchCase="'text'" [type]="field.type" [formControlName]="field.key">
+      <input *ngSwitchCase="'number'" [type]="field.type" [formControlName]="field.key">
+
+      <div *ngSwitchCase="'radio'">
+        <label *ngFor="let option of field.options">
+          <input type="radio"
+                 [name]="field.key"
+                 [formControlName]="field.key"
+                 [value]="option.value">
+
+          {{ option.label }}
+        </label>
+      </div>
+
+      <select *ngSwitchCase="'select'" [formControlName]="field.key">
+        <option *ngFor="let option of field.options" [value]="option.value">
+          {{ option.label }}
+        </option>
+      </select>
+    </div>
+
+    <div class="error" *ngIf="form.get(field.key).invalid && (form.get(field.key).dirty || form.get(field.key).touched)">
+      <div *ngIf="form.get(field.key).errors.required">
+        You have to provide a value.
+      </div>
+      <div *ngIf="form.get(field.key).errors.min">
+        You have to provide a value greater or equal to {{ form.get(field.key).errors.min.min }}
+      </div>
+    </div>
+
+  </div>
+</form>
+<pre>{{ form.value | json }}</pre>

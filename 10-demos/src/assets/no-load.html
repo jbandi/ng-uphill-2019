@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <base href="/assets">
+</head>
+<body>
+
+<aw-root>
+  <p>
+    This is a plain html page. Angular is not loaded automatically.
+  </p>
+  <p>
+    Load the application manually by clicking the buton below.
+  </p>
+
+  <button id="btn-load">Load App!</button>
+  <p>(works only in dev mode ...)</p>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  Compare some global browser variables before and after loading the application:
+  <pre>
+    var originalSetTimeout = window.setTimeout
+    var originalAlert = window.alert
+    var originalPromise = window.Promise
+    var originalFetch = window.fetch
+
+    // After loading the application:
+
+    originalSetTimeout === window.setTimeout
+    originalAlert === window.alert
+    originalPromise === window.Promise
+    originalFetch === window.fetch
+  </pre>
+
+  <br>
+  <br>
+  For a complete list of what Zone.js does patch see:
+  <a href="https://github.com/angular/zone.js/blob/master/STANDARD-APIS.md">Zone.js's support for standard apis</a>
+</aw-root>
+
+<script>
+  const btnStart = document.getElementById('btn-load');
+  btnStart.addEventListener('click', () => {
+
+    function appendScript(src) {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = src;
+      document.body.appendChild(script);
+    }
+
+    appendScript('../runtime.js');
+    appendScript('../polyfills.js');
+    appendScript('../styles.js');
+    appendScript('../vendor.js');
+    appendScript('../main.js');
+
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<mat-nav-list dense>
+
+  <ng-container *ngFor="let chapter of chapters">
+
+    <h3 mat-subheader (click)="toggleChapter(chapter)">{{chapter.title}}</h3>
+
+    <ng-container *ngIf="isExpanded(chapter)">
+      <a mat-list-item class="chapter-link"
+         *ngFor="let link of chapter.links"
+         routerLink="{{link.url}}"
+         routerLinkActive="active">
+        {{ link.title }}
+      </a>
+    </ng-container>
+
+  </ng-container>
+  <mat-nav-list>
+
