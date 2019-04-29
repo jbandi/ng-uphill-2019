@@ -104,7 +104,7 @@ Please clone the repo like this:
 
 To update the repo later during the course:
 
-	cd ng-bfh-2019
+	cd ng-uphill-2019
 	git pull
 
 
