@@ -1,0 +1,19 @@
+<div class="new-todo">
+  <form #formRef="ngForm" (ngSubmit)=" formRef.valid && onAddToDo()">
+    <input #inputRef="ngModel"
+           name="newToDoTitle"
+           [(ngModel)]="newToDoTitle"
+           required minlength="3"
+           type="text"
+           placeholder="What needs to be done???"
+           autofocus autocomplete="off"/>
+    <div class="add-button-container">
+      <button *ngIf="!saving && formRef.valid" type="submit" class="add-button" id="add-button">
+        +
+      </button>
+      <div *ngIf="saving" class="remove-button">
+        <td-spinner [spinnerSize]="'30px'" [delay]="0"></td-spinner>
+      </div>
+    </div>
+  </form>
+</div>

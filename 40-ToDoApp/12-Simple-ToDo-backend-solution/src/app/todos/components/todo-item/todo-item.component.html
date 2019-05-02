@@ -1,0 +1,13 @@
+<li>
+  {{todo.title}}
+  <button *ngIf="todo.id" class="remove-button" (click)="onRemoveToDo(todo)">
+    X
+  </button>
+  <div *ngIf="!todo.id" class="remove-button">
+    <td-spinner [spinnerSize]="'30px'" [delay]="0"></td-spinner>
+  </div>
+</li>
+
+
+<!-- DEMO:-->
+<!-- delay the response on the server ... the x button is not displayed-->
