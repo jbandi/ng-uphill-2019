@@ -1,0 +1,13 @@
+.app-content {
+  text-align: center;
+}
+p {
+  font-size: 3em;
+}
+a {
+  font-size: 2em;
+}
+.active {
+  font-weight: bold;
+  text-decoration: none;
+}
