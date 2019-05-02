@@ -1,0 +1,5 @@
+<section class="todoapp">
+  <td-new-todo (addToDo)="addToDo($event)"></td-new-todo>
+  <td-todo-list [todos]="todos" (removeToDo)="completeToDo($event)"></td-todo-list>
+</section>
+

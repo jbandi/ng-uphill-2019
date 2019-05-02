@@ -1,0 +1,6 @@
+<ul class="todo-list" >
+  <td-todo-item  *ngFor="let t of todos"
+                 [todo]="t"
+                 (removeToDo)="onRemoveToDo($event)">
+  </td-todo-item>
+</ul>
