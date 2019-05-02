@@ -1,0 +1,6 @@
+<section class="todoapp">
+  <td-todo-list *ngIf="!loading" [todos]="doneToDos" (removeToDo)="removeToDo($event)"></td-todo-list>
+  <div *ngIf="loading" class="loading-placeholder">
+    <td-spinner></td-spinner>
+  </div>
+</section>

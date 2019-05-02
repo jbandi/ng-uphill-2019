@@ -1,0 +1,20 @@
+<header class="todoapp-header">
+  <h1>Simplistic ToDo</h1>
+  <h4>A most simplistic ToDo List with Angular.</h4>
+</header>
+
+<div class="nav">
+  <a routerLink="/" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:true}">
+    Pending
+  </a>
+  <a routerLink="/done" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:true}">
+    Done
+  </a>
+</div>
+
+<router-outlet></router-outlet>
+
+<footer class="info">
+  <p>JavaScript Example / Initial template from <a href="https://github.com/tastejs/todomvc-app-template">todomvc-app-template</a>
+  </p>
+</footer>
